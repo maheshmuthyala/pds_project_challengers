@@ -34,6 +34,9 @@ Statistical imputation methods mean, median, and mode
 impute='median'   # Can use these strategies: ['mean', 'median', 'most_frequent'] Change strategies and run code again
 s_imputer=SimpleImputer(missing_values=np.nan,strategy=impute)  
 we change the value to variable impute and run the code again to fill data in the dataset accordingly we change them after noting the accuracies of the ML algorithms
+In the below line we need to change the values according to the dimensions of the dataset
+s_imputer=s_imputer.fit(data.iloc[0:,1:11]) 
+data.iloc[0:,1:11]=s_imputer.transform(data.iloc[0:,1:11]) 
 we run code repeatedly just changing the imputation method and dataset and noting the accuracies of the ML algorithms
 
 After noting the accuracies of the ML algorithms in different cases we plotted the graphs
